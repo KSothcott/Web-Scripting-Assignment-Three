@@ -1,5 +1,6 @@
 <?php
 include_once('server.php');
+include_once('cookiecheck.php');
 ?>
 
 <html>

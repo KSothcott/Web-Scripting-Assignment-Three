@@ -6,7 +6,8 @@ include_once('cookiecheck.php');
 <html>
 
 <head>
-    <title>Recipes for You</title>
+
+    <title>Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
@@ -54,11 +55,25 @@ include_once('cookiecheck.php');
         border-radius: 20px;
         width: 33%;
         text-align: center;
-        padding: 5px;
-        
+        padding: 5px; 
     }
     
-    
+    .button {
+        border: 2px solid black;
+        background-color: white;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+        margin: 20px;
+        cursor: pointer;
+    }
+
+    .button:hover {
+    background-color: #AAD8CD;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.10);
+    }
 
 </style>
 </head>
@@ -72,49 +87,10 @@ include_once('cookiecheck.php');
     </div>
        
     <div class="heading">
-	    <p>Recipes for You</p>
+	    <p>Profile</p>
    	</div>
-     
-    <img src="Logo.png" style="float: right;width: 200px;height: 200px;padding-right: 50px;"/>
+
+    <a href="http://localhost:8080/Web-Scripting-Assignment-Three/logout.php" style="float:right;" class="button">Log out</a>
     
-    <p style="padding-left: 50px;">Welcome to Recipes for You. <br /> <br /> Please choose from our selection of recipes below for more details.</p>
-    <br /><br /><br />
-
-    
-<?php
-    
-    $query = ' SELECT * FROM `recipes` ';
-
-    $result = $con->query($query);
-    
-     
-        echo '<table class="table"><tr>';
-        $counter=0;
-        while($row = $result->fetch(PDO::FETCH_ASSOC)) 
-        {
-            $image_address = '<img src="'.$row['Image'].'" width="200" height="200" onclick="window.location.href='."' detail.php?id=".$row['RecipeID']."'".'" />';
-            $recipe_name = $row['RecipeName'];
-            $price = '&pound;'.$row['Price']/100;
-            $recipe_id = $row['RecipeID'];
-            
-            if($counter >=3)
-                { echo '</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>'; $counter=1;}     
-                else $counter++;                 
-
-        
-        echo '<td class="border">'.$image_address.'<br />'.$recipe_name.'<br />'.$price.'<br /></td>';
-        echo '<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>';
-        }
-        echo '</tr></table>';
-    
-
-
-
-
-?>
-
-
 </body>
-
 </html>
-
