@@ -1,4 +1,64 @@
 
+<script>
+function check_passwords_match()
+{
+    var  p1 = document.getElementById("password").value;
+    var p2 = document.getElementById("password2").value;
+    if(!(p1===p2)) 
+     { alert("Passwords do not match");
+        document.getElementById('password').value = "";
+        document.getElementById('password2').value= "";
+        document.getElementById('password').focus();
+        return;
+     }    
+}
+
+function create_new_user()
+{
+    let first = document.getElementById("firstname").value;
+    first = first.toUpperCase();
+    document.getElementById('firstname').value = first;
+    
+    
+    if(first==="")
+    {
+        alert("First Name Not Entered"); 
+        document.getElementById('firstname').focus();
+        return;
+    }
+    
+    let last = document.getElementById("lastname").value;
+    last = last.toUpperCase();
+    document.getElementById('lastname').value = last;
+    
+    
+    if(last==="")
+    {
+        alert("Last name not entered"); 
+        document.getElementById('lastname').focus();
+        return;
+    }
+    
+    let email = document.getElementById("email").value;
+    email = email.toLowerCase();
+    document.getElementById('email').value = email;
+    
+    
+    if(email==="")
+    {
+        alert("Email address not valid"); 
+        document.getElementById('email').focus();
+        return;
+    }
+    
+    document.getElementById('f1').submit();  
+}
+    window.onload = function()
+    {
+    document.getElementById('firstname').focus();
+    }
+</script>
+
 <html>
 <head>
 <title>Create an Account</title>
