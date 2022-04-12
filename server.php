@@ -1,6 +1,6 @@
     
     <?php
 
-    $dbc = mysqli_connect( 'localhost' , 'root' , 'root' , 'products' );
+    $con = new PDO( "mysql:host=127.0.0.1;dbname=products", "root", "root" ); 
     
     ?>

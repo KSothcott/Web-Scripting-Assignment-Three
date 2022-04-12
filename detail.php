@@ -1,3 +1,7 @@
+<?php
+include_once('server.php');
+?>
+
 <html>
 
 <head>
@@ -7,7 +11,6 @@
 <style>
 
     .heading {
-        float: center;
 		font-size: 34px;
 		margin: 20px;
 		text-align: center;
@@ -21,10 +24,10 @@
     }
 
     .icon-bar a {
-        float: left;
         text-align: center;
         padding: 12px;
         margin-left: 50px;
+        margin-right: 50px;
         transition: all 0.3s ease;
         color: white;
         font-size: 36px;
@@ -69,7 +72,9 @@
 <body style="background-color: #F5ECEB; font-family: verdana;">
 
     <div class="icon-bar">
-        <a href="http://localhost:8080/Web-Scripting-Website/" style="font-size: 47px;"><i class="fa fa-home"></i></a> 
+        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
+        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
+        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a> 
     </div>
 
     <div class="heading">
@@ -82,13 +87,12 @@
 $id = $_GET['id']; 
 if (isset($_GET['id']))
     {        
-        $dbc = mysqli_connect( 'localhost' , 'root' , 'root' , 'products' );
         
         $query = ' SELECT * FROM `recipes` WHERE `RecipeID`='.$id; 
         
-        $result = mysqli_query($dbc,$query);
+        $result = $con->query($query);
         
-        $row= mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
         
         $image_address = '<img src="'.$row['Image'].'" class="image" />';
         
