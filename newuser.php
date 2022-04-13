@@ -98,7 +98,6 @@ function create_new_user()
         padding: 10px;
         text-decoration: none;
         color: black;
-        font-family: sans-serif;
         margin: 20px;
         cursor: pointer;
     }
@@ -111,7 +110,6 @@ function create_new_user()
     
     .label {
         margin: 20px;
-        font-family: sans-serif;
         font-size: 15pt;
     }
     
@@ -148,7 +146,7 @@ function create_new_user()
         <input style="font-size: 14pt;" type="password" id="password2" name="password2" placeholder="Re-enter your password" form="f1" onchange="check_passwords_match()"/><br/><br/> 
 
      </form>
-        <button class="button" style="font-size: 12pt;" onclick="create_new_user()">Create account</button>
+        <button class="button" style="font-size: 12pt; font-family: verdana;" onclick="create_new_user()">Create account</button>
      
      
     <br /><br />

@@ -40,7 +40,6 @@
         padding: 10px;
         text-decoration: none;
         color: black;
-        font-family: sans-serif;
         margin: 20px;
         cursor: pointer;
     }
@@ -53,7 +52,6 @@
     
     .label {
         margin: 20px;
-        font-family: sans-serif;
         font-size: 15pt;
     }
     
@@ -84,13 +82,13 @@ window.onload = function()
 
         <label class="label">Email address</label>
 
-        <input type="email" name="email" id="email" placeholder="Enter your email" form="f1"/> <br/><br/>
+        <input type="email" name="email" style="font-size: 14pt;" id="email" placeholder="Enter your email" form="f1"/> <br/><br/>
         
         <label class="label">Password</label>
 
-        <input type="password" name="password" id="password" placeholder="Enter your password" form="f1"/><br/><br/> 
+        <input type="password" name="password" style="font-size: 14pt; "id="password" placeholder="Enter your password" form="f1"/><br/><br/> 
 
-        <button class="button" style="font-size: 12pt;" onclick="document.getElementById('f1').submit()">Login</button>
+        <button class="button" style="font-size: 12pt; font-family: verdana;" onclick="document.getElementById('f1').submit()">Login</button>
 
      </form>
      

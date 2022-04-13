@@ -75,7 +75,12 @@ include_once('cookiecheck.php');
 	    <p>Recipes for You</p>
    	</div>
     
-    <p style="padding-left: 50px;">Welcome to Recipes for You. <br /> <br /> Please choose from our selection of recipes below for more details.</p>
+    <p style="padding-left: 50px;">Welcome <?php
+    $query = 'SELECT * FROM `userinfo` WHERE `UserID` = '.$_COOKIE['UserID'];
+    $result = $con->query($query);
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    echo $row['FirstName'];
+    ?>. <br /> <br /> Please choose from our selection of recipes below for more details.</p>
     <br /><br /><br />
 
     
