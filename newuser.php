@@ -16,7 +16,6 @@ function check_passwords_match()
 function create_new_user()
 {
     let first = document.getElementById("firstname").value;
-    first = first.toUpperCase();
     document.getElementById('firstname').value = first;
     
     
@@ -28,7 +27,6 @@ function create_new_user()
     }
     
     let last = document.getElementById("lastname").value;
-    last = last.toUpperCase();
     document.getElementById('lastname').value = last;
     
     
