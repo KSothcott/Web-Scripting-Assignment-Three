@@ -43,10 +43,11 @@ include_once('cookiecheck.php');
         height: 300px;
         float: left;
         margin: 50px;
-        padding: 10px;
-        border: 5px;
+        padding: 3px;
+        border: 3px;
         border-style: solid;
-        border-color: #509D8A; 
+        border-color: #509D8A;
+        border-radius: 20px; 
     }
     
 

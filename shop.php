@@ -13,7 +13,7 @@ include_once('cookiecheck.php');
 
     .heading {
 		font-size: 34px;
-		margin: 20px;
+		margin-left: 250px;
 		text-align: center;
         font-family: verdana;
     }
@@ -38,13 +38,13 @@ include_once('cookiecheck.php');
     background-color: #747875;
     }    
     
-    .table {
-        width: 83%;
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-bottom: 20px;
-        padding-top: 20px;
-        cursor: pointer; 
+    .products {
+        float: left;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 20px;
+        cursor: pointer;        
     }
     
     .border {
@@ -52,13 +52,10 @@ include_once('cookiecheck.php');
         border-color: #509D8A;
         border-style: solid;
         border-radius: 20px;
-        width: 33%;
         text-align: center;
-        padding: 5px;
+        padding: 3px;
         
     }
-    
-    
 
 </style>
 </head>
@@ -70,12 +67,13 @@ include_once('cookiecheck.php');
         <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
         <a href="http://localhost:8080/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a>
     </div>
+    
+    <br />
+    <img src="Logo.png" style="float: right;width: 200px;height: 200px;padding-right: 50px;"/>
        
     <div class="heading">
 	    <p>Recipes for You</p>
    	</div>
-     
-    <img src="Logo.png" style="float: right;width: 200px;height: 200px;padding-right: 50px;"/>
     
     <p style="padding-left: 50px;">Welcome to Recipes for You. <br /> <br /> Please choose from our selection of recipes below for more details.</p>
     <br /><br /><br />
@@ -87,29 +85,17 @@ include_once('cookiecheck.php');
 
     $result = $con->query($query);
     
-     
-        echo '<table class="table"><tr>';
-        $counter=0;
         while($row = $result->fetch(PDO::FETCH_ASSOC)) 
         {
-            $image_address = '<img src="'.$row['Image'].'" width="200" height="200" onclick="window.location.href='."' detail.php?id=".$row['RecipeID']."'".'" />';
+            $image_address = '<img class="border" src="'.$row['Image'].'" width="300" height="300" onclick="window.location.href='."' detail.php?id=".$row['RecipeID']."'".'" />';
             $recipe_name = $row['RecipeName'];
             $price = '&pound;'.$row['Price']/100;
-            $recipe_id = $row['RecipeID'];
-            
-            if($counter >=3)
-                { echo '</tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr>'; $counter=1;}     
-                else $counter++;                 
+            $recipe_id = $row['RecipeID'];              
 
-        
-        echo '<td class="border">'.$image_address.'<br />'.$recipe_name.'<br />'.$price.'<br /></td>';
-        echo '<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>';
+        echo '<div class="products">';
+        echo '<image>'.$image_address.'<br />'.$recipe_name.'<br />'.$price.'<br />';
+        echo '</div>';
         }
-        echo '</tr></table>';
-    
-
-
-
 
 ?>
 
