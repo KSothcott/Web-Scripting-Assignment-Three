@@ -64,7 +64,6 @@ include_once('cookiecheck.php');
         padding: 10px;
         text-decoration: none;
         color: black;
-        font-family: sans-serif;
         margin: 20px;
         cursor: pointer;
     }
@@ -73,6 +72,16 @@ include_once('cookiecheck.php');
     background-color: #AAD8CD;
     transition: all 0.4s ease;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.10);
+    }
+    
+    .label {
+        margin: 20px;
+        font-size: 17pt;
+    }
+    
+    .details {
+        margin: 20px;
+        font-size: 14pt;
     }
 
 </style>
@@ -91,6 +100,15 @@ include_once('cookiecheck.php');
    	</div>
 
     <a href="http://localhost:8080/Web-Scripting-Assignment-Three/logout.php" style="float:right;" class="button">Log out</a>
+    
+    <?php
+    
+    $query = 'SELECT * FROM `userinfo` WHERE `UserID` = '.$_COOKIE['UserID'];
+    $result = $con->query($query);
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    echo $row['FirstName'].' '.$row['LastName'];
+    
+    ?>
     
 </body>
 </html>
