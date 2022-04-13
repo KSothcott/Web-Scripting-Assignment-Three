@@ -1,3 +1,7 @@
+<script>
+    document.getElementById('f1').submit();
+</script>
+
 <?php
 include_once('server.php');
 ?>
@@ -65,6 +69,7 @@ include_once('server.php');
         color: black;
         margin: 20px;
         cursor: pointer;
+        float: right;
     }
 
     .button:hover {
@@ -81,6 +86,18 @@ include_once('server.php');
     .details {
         margin: 20px;
         font-size: 14pt;
+    }
+    
+    .textbox {
+        margin: 20px;
+        padding: 10px;
+        font-size: 12pt;
+    }
+    
+    .dropdown {
+        font-size: 14pt;
+        width: 100px;
+        font-family: verdana;
     }
 
 </style>
@@ -99,6 +116,49 @@ include_once('server.php');
    	</div>
     
     <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" class="button">Save changes</a>
+
+<?php
+
+        $query = 'SELECT * FROM `profile` WHERE `UserID` = '.$_COOKIE['UserID'];
+        $result = $con->query($query);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+
+        echo '<form action="http://localhost:8080/Web-Scripting-Assignment-Three/profile_edit_process.php" method="post" id="f1" name="f1">';
+        
+        echo '<label class="label">Age:</label>';
+        echo '<br />';
+        echo '<input class="textbox" style="width:100px;" type="number" min="10" max="100" name="age" id="age" placeholder="Age" form="f1" value="'.$row["age"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
+        echo '<br />';
+        
+        echo '<label class="label">Gender:</label>';
+        echo '<br />';
+        echo '<input class="textbox" style="width:300px;" type="text" name="gender" id="gender" placeholder="Gender" form="f1" value="'.$row["gender"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
+        echo '<br />';
+        
+        echo '<label class="label">Country or Region:</label>';
+        echo '<br />';
+        echo '<input class="textbox" style="width:300px;" type="text" name="country" id="country" placeholder="Country or Region" form="f1" value="'.$row["country"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
+        echo '<br />';
+
+        echo '<label class="label">What diet do you follow?</label>';
+        echo '<select class="dropdown" id="diet" name="diet" form="f1" value="'.$row["diet"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
+        echo    '<option value="diet">Diet:</option>';
+        echo    '<option value="Vegan">Vegan</option>';
+        echo    '<option value="Vegetarian">Vegetarian</option>';
+        echo    '<option value="Pescatarian">Pescatarian</option>';
+        echo    '<option value="Paleo">Paleo</option>';
+        echo    '<option value="Keto">Keto</option>';
+        echo    '<option value="Gluten Free">Gluten Free</option>';
+        echo    '<option value="No diet followed/other">No diet followed/other</option>';
+        echo '</select>';
+        echo '<p class="details">'.$row["diet"].'</p>';
+
+        echo '<label class="label">What is your favourite recipe on Recipes for You?</label>';
+        echo '<br />';
+        echo '<input class="textbox" style="width:300px;" type="text" name="favourite_recipe" id="favourite_recipe" placeholder="Favourite recipe" form="f1" value="'.$row["favourite_recipe"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
+        echo '<br />';
+
+?>
 
 </body>
 </html>
