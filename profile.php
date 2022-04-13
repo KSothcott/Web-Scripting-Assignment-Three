@@ -106,8 +106,28 @@ include_once('cookiecheck.php');
     $query = 'SELECT * FROM `userinfo` WHERE `UserID` = '.$_COOKIE['UserID'];
     $result = $con->query($query);
     $row = $result->fetch(PDO::FETCH_ASSOC);
-    echo $row['FirstName'].' '.$row['LastName'];
+    echo '<p class="label">'.$row['FirstName'].' '.$row['LastName'].'</p>';
     
+    $query = 'SELECT * FROM `profile` WHERE `UserID` = '.$_COOKIE['UserID'];
+    $result = $con->query($query);
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+
+    echo '<br /><br />';
+    echo '<label class="label">Age:</label>';
+    echo '<p class="details">'.$row["age"].'</p>';
+    echo '<br /><br />';
+    echo '<label class="label">Gender:</label>';
+    echo '<p class="details">'.$row["gender"].'</p>';
+    echo '<br /><br />';
+    echo '<label class="label">Country:</label>';
+    echo '<p class="details">'.$row["country"].'</p>';
+    echo '<br /><br />';
+    echo '<label class="label">Diet:</label>';
+    echo '<p class="details">'.$row["diet"].'</p>';
+    echo '<br /><br />';
+    echo '<label class="label">Favourite recipe:</label>';
+    echo '<p class="details">'.$row["favourite_recipe"].'</p>';
+    echo '<br /><br />';
     ?>
     
 </body>
