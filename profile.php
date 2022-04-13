@@ -100,6 +100,7 @@ include_once('cookiecheck.php');
    	</div>
 
     <a href="http://localhost:8080/Web-Scripting-Assignment-Three/logout.php" style="float:right;" class="button">Log out</a>
+    <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile_edit.php" style="float:right;" class="button">Edit your profile</a>
     
     <?php
     
@@ -112,22 +113,21 @@ include_once('cookiecheck.php');
     $result = $con->query($query);
     $row = $result->fetch(PDO::FETCH_ASSOC);
 
-    echo '<br /><br />';
     echo '<label class="label">Age:</label>';
     echo '<p class="details">'.$row["age"].'</p>';
-    echo '<br /><br />';
+
     echo '<label class="label">Gender:</label>';
     echo '<p class="details">'.$row["gender"].'</p>';
-    echo '<br /><br />';
+
     echo '<label class="label">Country:</label>';
     echo '<p class="details">'.$row["country"].'</p>';
-    echo '<br /><br />';
+
     echo '<label class="label">Diet:</label>';
     echo '<p class="details">'.$row["diet"].'</p>';
-    echo '<br /><br />';
+
     echo '<label class="label">Favourite recipe:</label>';
     echo '<p class="details">'.$row["favourite_recipe"].'</p>';
-    echo '<br /><br />';
+
     ?>
     
 </body>
