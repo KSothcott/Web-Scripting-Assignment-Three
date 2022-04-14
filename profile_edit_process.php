@@ -15,4 +15,4 @@ include_once('server.php');
 
 ?>
 
-<html><body onload="window.location.href='http://localhost:8080/Web-Scripting-Assignment-Three/profile_edit.php'"></body></html>
+<html><body onload="window.location.href='/Web-Scripting-Assignment-Three/profile_edit.php'"></body></html>

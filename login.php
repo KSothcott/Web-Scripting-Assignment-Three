@@ -68,10 +68,10 @@ window.onload = function()
 <body style="background-color: #F5ECEB; font-family: verdana;">
 
     <div class="icon-bar">
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a> 
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a> 
+        <a href="/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
     </div>
 
     <div class="heading">
@@ -94,7 +94,7 @@ window.onload = function()
      </form>
      
     <br />
-    <a href="http://localhost:8080/Web-Scripting-Assignment-Three/newuser.php" class="button">New user? Click here to create an account</a>
+    <a href="/Web-Scripting-Assignment-Three/newuser.php" class="button">New user? Click here to create an account</a>
     
 </body>
 </html>

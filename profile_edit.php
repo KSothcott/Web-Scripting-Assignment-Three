@@ -106,17 +106,17 @@ include_once('server.php');
 <body style="background-color: #F5ECEB; font-family: verdana;">
 
     <div class="icon-bar">
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
     </div>
        
     <div class="heading">
 	    <p>Edit your Profile</p>
    	</div>
     
-    <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" class="button">Save changes</a>
+    <a href="/Web-Scripting-Assignment-Three/profile.php" class="button">Save changes</a>
 
 <?php
 
@@ -124,7 +124,7 @@ include_once('server.php');
         $result = $con->query($query);
         $row = $result->fetch(PDO::FETCH_ASSOC);
 
-        echo '<form action="http://localhost:8080/Web-Scripting-Assignment-Three/profile_edit_process.php" method="post" id="f1" name="f1">';
+        echo '<form action="/Web-Scripting-Assignment-Three/profile_edit_process.php" method="post" id="f1" name="f1">';
         
         echo '<label class="label">Age:</label>';
         echo '<br />';
@@ -158,6 +158,8 @@ include_once('server.php');
         echo '<br />';
         echo '<input class="textbox" style="width:300px;" type="text" name="favourite_recipe" id="favourite_recipe" placeholder="Favourite recipe" form="f1" value="'.$row["favourite_recipe"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
         echo '<br />';
+        
+        echo '</form>;'
 
 ?>
 

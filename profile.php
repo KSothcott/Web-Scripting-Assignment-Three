@@ -90,18 +90,18 @@ include_once('cookiecheck.php');
 <body style="background-color: #F5ECEB; font-family: verdana;">
 
     <div class="icon-bar">
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a>
-        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a>
+        <a href="/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
     </div>
        
     <div class="heading">
 	    <p>Profile</p>
    	</div>
 
-    <a href="http://localhost:8080/Web-Scripting-Assignment-Three/logout.php" style="float:right;" class="button">Log out</a>
-    <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile_edit.php" style="float:right;" class="button">Edit your profile</a>
+    <a href="/Web-Scripting-Assignment-Three/logout.php" style="float:right;" class="button">Log out</a>
+    <a href="/Web-Scripting-Assignment-Three/profile_edit.php" style="float:right;" class="button">Edit your profile</a>
     
     <?php
     

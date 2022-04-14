@@ -42,4 +42,4 @@ if($checkemail && $checkpassword)
 $con=NULL;
 ?>
 
-<html><body onload="window.location.href='http://localhost:8080/Web-Scripting-Assignment-Three/shop.php'"></body></body></html>
+<html><body onload="window.location.href='/Web-Scripting-Assignment-Three/shop.php'"></body></body></html>
