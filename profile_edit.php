@@ -109,6 +109,7 @@ include_once('server.php');
         <a href="http://localhost:8080/Web-Scripting-Assignment-Three/shop.php" style="font-size: 47px; float: left;"><i class="fa fa-home"></i></a>
         <a href="http://localhost:8080/Web-Scripting-Assignment-Three/profile.php" style="font-size: 47px; float: right;"><i class="fa fa-user"></i></a>
         <a href="http://localhost:8080/Web-Scripting-Assignment-Three/cart.php" style="font-size: 47px; float: right;"><i class="fa fa-shopping-cart"></i></a>
+        <a href="http://localhost:8080/Web-Scripting-Assignment-Three/forum.php" style="font-size: 47px; float: right;"><i class="fa fa-comments"></i></a>
     </div>
        
     <div class="heading">
@@ -127,7 +128,7 @@ include_once('server.php');
         
         echo '<label class="label">Age:</label>';
         echo '<br />';
-        echo '<input class="textbox" style="width:100px;" type="number" min="10" max="100" name="age" id="age" placeholder="Age" form="f1" value="'.$row["age"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
+        echo '<input class="textbox" style="width:100px;" type="number" name="age" id="age" placeholder="Age" form="f1" value="'.$row["age"].'" onchange="document.getElementById('."'f1'".').submit()"/>';
         echo '<br />';
         
         echo '<label class="label">Gender:</label>';
