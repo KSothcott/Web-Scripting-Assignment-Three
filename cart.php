@@ -47,7 +47,7 @@ include_once('cookiecheck.php');
         color: black;
         cursor: pointer;
         float: right;
-        margin: 20px;
+        margin-right: 100px;
     }
 
     .button:hover {
@@ -60,8 +60,7 @@ include_once('cookiecheck.php');
         float: left;
         text-align: center;
         margin-left: 50px;
-        margin-bottom: 20px;
-        cursor: pointer;        
+        margin-bottom: 20px;      
     }
     
     .total{
@@ -100,6 +99,7 @@ include_once('cookiecheck.php');
             $query = " SELECT * FROM `recipes` WHERE `RecipeID` = '$recipe_id' ORDER BY `RecipeID` ASC ";
 
             $result = $con->query($query);
+            
     
             while($row = $result->fetch(PDO::FETCH_ASSOC))
             {
@@ -120,6 +120,8 @@ include_once('cookiecheck.php');
     echo '<p class="total">Total price: <br /><br />';
     echo '&pound;'.$total/100;
     echo '</p>';
+    
+    echo '<a class="button" onclick="window.location.href='."' cart_process.php?price=".$total."'".'">Checkout</button>';
     
 ?>
 

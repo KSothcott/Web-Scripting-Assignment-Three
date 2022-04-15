@@ -135,11 +135,7 @@ if (isset($_GET['id']))
         
         echo $image_address;
         
-        echo "<br />";
-        echo "<br />";
-        echo "<br />";
-        echo "<br />";
-        echo "<br />";
+        echo "<br /><br /><br /><br /><br />";
         
         $name = $row['RecipeName'];
         
