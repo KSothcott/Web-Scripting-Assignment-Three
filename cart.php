@@ -43,11 +43,26 @@ include_once('cookiecheck.php');
         border: 2px solid black;
         background-color: white;
         padding: 10px;
-        text-decoration: none;
         color: black;
         cursor: pointer;
         float: right;
         margin-right: 100px;
+        height: 20px;
+        width: 250px;
+        text-align: center;
+    }
+    
+    .button2 {
+        border: 2px solid black;
+        background-color: white;
+        padding: 10px;
+        color: black;
+        cursor: pointer;
+        float: right;
+        margin-right: 100px;
+        margin-left: 100px;
+        text-align: center;
+        text-decoration: none;
     }
 
     .button:hover {
@@ -57,8 +72,6 @@ include_once('cookiecheck.php');
     }
     
     .products {
-        float: left;
-        text-align: center;
         margin-left: 50px;
         margin-bottom: 20px;      
     }
@@ -66,6 +79,13 @@ include_once('cookiecheck.php');
     .total{
         margin-left: 50px;
         font-size: 15pt;
+        border: 3px;
+        text-align: center;
+        border-color: #509D8A;
+        border-style: solid;
+        border-radius: 5px;
+        width: 200px;
+        padding: 5px;
     }
     
 </style>
@@ -84,7 +104,11 @@ include_once('cookiecheck.php');
 	    <p>Shopping Cart</p>
    	</div>
 
+    <img src="Logo.png" style="float: right;width: 300px;height: 300px;margin-right: 50px;"/>
+
 <?php
+
+    echo '<a class="button2" href="/Web-Scripting-Assignment-Three/clear_order.php">Empty cart</a>';
 
     $query = 'SELECT * FROM `order_contents` WHERE `UserID` = '.$_COOKIE['UserID']; 
         
@@ -109,19 +133,18 @@ include_once('cookiecheck.php');
             $price = '&pound;'.$row['Price']/100;
             
             echo '<div class="products">';
-            echo '<image>'.$image_address.'<br />'.$recipe_name.'<br />'.$price.'<br />';
+            echo '<image>'.$image_address.' '.$recipe_name.' '.$price.'<br />';
             echo '</div>';  
             $total += $row['Price'];
             }
   
         }
     
-    echo '<br /><br /><br /><br /><br /><br /><br /><br /><br />';
+    echo '<a class="button" onclick="window.location.href='."' cart_process.php?price=".$total."'".'">Checkout</a>';    
+        
     echo '<p class="total">Total price: <br /><br />';
     echo '&pound;'.$total/100;
     echo '</p>';
-    
-    echo '<a class="button" onclick="window.location.href='."' cart_process.php?price=".$total."'".'">Checkout</button>';
     
 ?>
 
