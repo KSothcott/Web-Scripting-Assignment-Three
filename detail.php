@@ -125,7 +125,7 @@ $id = $_GET['id'];
 if (isset($_GET['id']))
     {        
         
-        $query = ' SELECT * FROM `recipes` WHERE `RecipeID`='.$id; 
+        $query = 'SELECT * FROM `recipes` WHERE `RecipeID`='.$id; 
         
         $result = $con->query($query);
         
