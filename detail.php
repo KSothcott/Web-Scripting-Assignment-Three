@@ -1,3 +1,12 @@
+<script>
+
+function additem($id){
+    var $outstring = "add_process.php?id="+$id; 
+    window.location.href=$outstring;
+}
+
+</script>
+
 <?php
 include_once('server.php');
 include_once('cookiecheck.php');
@@ -68,6 +77,30 @@ include_once('cookiecheck.php');
         width: 50%;
     }
     
+    .button {
+        border: 2px solid black;
+        background-color: white;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        margin: 20px;
+        cursor: pointer;
+        font-family: verdana;
+        font-size: 12pt;
+    }
+
+    .button:hover {
+    background-color: #AAD8CD;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.10);
+    }
+    
+    .textbox {
+        margin: 20px;
+        padding: 10px;
+        font-size: 12pt;
+    }
+    
 </style>
 </head>
 
@@ -87,6 +120,7 @@ include_once('cookiecheck.php');
     
     
 <?php
+
 $id = $_GET['id']; 
 if (isset($_GET['id']))
     {        
@@ -124,6 +158,12 @@ if (isset($_GET['id']))
         echo '<p id="description">'.$price.'</p>';
         
     }
+    
+    $add = '<button class="button" onclick ="additem(';
+    $add.= "'".$_GET['id']."')";
+    $add.= '">Add to Cart</button>';
+    echo $add;
+    
 ?>
 
 </body>
