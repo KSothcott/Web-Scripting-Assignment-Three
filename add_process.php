@@ -11,4 +11,4 @@ include_once('cookiecheck.php');
        
 ?>
 
-<html><body onload="window.location.href='/Web-Scripting-Assignment-Three/shop.php'"></body></html>
+<html><body onload="window.location.href='/Web-Scripting-Assignment-Three/cart.php'"></body></html>

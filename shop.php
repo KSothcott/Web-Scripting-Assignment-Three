@@ -70,7 +70,7 @@ include_once('cookiecheck.php');
     </div>
     
     <br />
-    <img src="Logo.png" style="float: right;width: 200px;height: 200px;padding-right: 50px;"/>
+    <img src="Logo.png" style="float: right;width: 200px;height: 200px;margin-right: 50px;"/>
        
     <div class="heading">
 	    <p>Recipes for You</p>
