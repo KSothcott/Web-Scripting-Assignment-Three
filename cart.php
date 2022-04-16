@@ -71,6 +71,12 @@ include_once('cookiecheck.php');
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.10);
     }
     
+    .button2:hover {
+    background-color: #AAD8CD;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.10);
+    }
+    
     .products {
         margin-left: 50px;
         margin-bottom: 20px;      

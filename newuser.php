@@ -147,8 +147,7 @@ function create_new_user()
         <input style="font-size: 14pt;" type="password" id="password2" name="password2" placeholder="Re-enter your password" form="f1" onchange="check_passwords_match()"/><br/><br/> 
 
      </form>
-        <button class="button" style="font-size: 12pt; font-family: verdana;" onclick="create_new_user()">Create account</button>
-     
+        <button class="button" style="font-size: 12pt; font-family: verdana;" onclick="create_new_user()">Create account</button>     
      
     <br /><br />
     <a href="/Web-Scripting-Assignment-Three/login.php" class="button">Already have an account? Click here to login</a>      

@@ -42,7 +42,7 @@ include_once('cookiecheck.php');
         float: left;
         text-align: center;
         margin-left: 50px;
-        margin-right: 50px;
+        margin-right: 15px;
         margin-bottom: 20px;
         cursor: pointer;        
     }
@@ -62,7 +62,8 @@ include_once('cookiecheck.php');
         font-family: verdana;
         height: 40px;
         border: 2px solid black;
-        margin-left: 70px;        
+        margin-right: 20px;
+        float: right;        
     }
     
     .button {
@@ -76,6 +77,7 @@ include_once('cookiecheck.php');
         font-size: 12pt;
         height: 40px;
         width:  70px;
+        float: right; 
     }
 
     .button:hover {
@@ -112,17 +114,28 @@ include_once('cookiecheck.php');
     <br /><br /><br />
 
 <?php
-    
+
     echo '<form>';
-    echo '<select class="dropdown" name="category" id="category">';
-    echo '<option value="all">View all</option>';
-    echo '<option value="vegan">Vegan</option>';
-    echo '<option value="vegetarian">Vegetarian</option>';
-    echo '<option value="glutenfree">Gluten Free</option>';
-    echo '<option value="fish">Fish</option>';
-    echo '<option value="desserts">Desserts</option>';
-    echo '</select>';
     echo '<input type="submit" class="button" value="Go"/>';
+    echo '<select class="dropdown" name="category" id="category">';
+        echo '<option value="all">View all</option>';
+        echo '<option value="vegan">Vegan</option>';
+        echo '<option value="vegetarian">Vegetarian</option>';
+        echo '<option value="glutenfree">Gluten Free</option>';
+        echo '<option value="fish">Fish</option>';
+        echo '<option value="desserts">Desserts</option>';
+    echo '</select>';
+    echo '</form>';
+
+    echo '<br /><br /><br /><br />';
+
+    echo '<form>';
+    echo '<input type="submit" class="button" value="Go"/>';
+    echo '<select class="dropdown" name="category" id="category">';
+        echo '<option value="alphabetical">Alphabetical</option>';
+        echo '<option value="lowhigh">Low to high price</option>';
+        echo '<option value="highlow">High to low price</option>';
+    echo '</select>';
     echo '</form>';
 
     $query = ' SELECT * FROM `recipes` ';           
@@ -143,10 +156,14 @@ include_once('cookiecheck.php');
     elseif ($category == "desserts") {
        $query = ' SELECT * FROM `recipes` WHERE Desserts IS NOT NULL ';
        }
+    elseif ($category == "lowhigh") {
+       $query = ' SELECT * FROM `recipes` ORDER BY `Price` ASC ';
+       }
+    elseif ($category == "highlow") {
+       $query = ' SELECT * FROM `recipes` ORDER BY `Price` DESC ';
+       }
 
     $result = $con->query($query);
-    
-    //$query = ' SELECT * FROM `recipes` ORDER BY `Price` ASC ';
     
         while($row = $result->fetch(PDO::FETCH_ASSOC)) 
         {
@@ -161,7 +178,6 @@ include_once('cookiecheck.php');
         }
 
 ?>
-
 
 </body>
 
