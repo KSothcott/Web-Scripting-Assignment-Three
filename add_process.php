@@ -7,6 +7,7 @@ include_once('cookiecheck.php');
     $id = $_GET['id'];
     
     $query = $query = 'INSERT INTO `products`.`order_contents` (`RecipeID`, `UserID`) VALUES ("'.$id.'","'.$_COOKIE['UserID'].'")';
+
     $con->query($query);
        
 ?>

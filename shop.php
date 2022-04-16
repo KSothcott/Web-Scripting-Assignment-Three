@@ -54,7 +54,34 @@ include_once('cookiecheck.php');
         border-radius: 20px;
         text-align: center;
         padding: 3px;
-        
+    }
+    
+    .dropdown {
+        font-size: 14pt;
+        width: 200px;
+        font-family: verdana;
+        height: 40px;
+        border: 2px solid black;
+        margin-left: 70px;        
+    }
+    
+    .button {
+        border: 2px solid black;
+        background-color: white;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        margin: 10px;
+        font-size: 12pt;
+        height: 40px;
+        width:  70px;
+    }
+
+    .button:hover {
+    background-color: #AAD8CD;
+    transition: all 0.4s ease;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.10), 0 17px 50px 0 rgba(0,0,0,0.10);
     }
 
 </style>
@@ -84,12 +111,42 @@ include_once('cookiecheck.php');
     ?>. <br /> <br /> Please choose from our selection of recipes below for more details.</p>
     <br /><br /><br />
 
-    
 <?php
     
-    $query = ' SELECT * FROM `recipes` ';
+    echo '<form>';
+    echo '<select class="dropdown" name="category" id="category">';
+    echo '<option value="all">View all</option>';
+    echo '<option value="vegan">Vegan</option>';
+    echo '<option value="vegetarian">Vegetarian</option>';
+    echo '<option value="glutenfree">Gluten Free</option>';
+    echo '<option value="fish">Fish</option>';
+    echo '<option value="desserts">Desserts</option>';
+    echo '</select>';
+    echo '<input type="submit" class="button" value="Go"/>';
+    echo '</form>';
+
+    $query = ' SELECT * FROM `recipes` ';           
+    $category = $_GET['category'];
+    
+    if ($category == "vegan") {
+       $query = ' SELECT * FROM `recipes` WHERE Vegan IS NOT NULL ';
+       }
+    elseif ($category == "vegetarian") {
+       $query = ' SELECT * FROM `recipes` WHERE Vegetarian IS NOT NULL ';
+       }
+    elseif ($category == "glutenfree") {
+       $query = ' SELECT * FROM `recipes` WHERE GlutenFree IS NOT NULL ';
+       }
+    elseif ($category == "fish") {
+       $query = ' SELECT * FROM `recipes` WHERE Fish IS NOT NULL ';
+       } 
+    elseif ($category == "desserts") {
+       $query = ' SELECT * FROM `recipes` WHERE Desserts IS NOT NULL ';
+       }
 
     $result = $con->query($query);
+    
+    //$query = ' SELECT * FROM `recipes` ORDER BY `Price` ASC ';
     
         while($row = $result->fetch(PDO::FETCH_ASSOC)) 
         {

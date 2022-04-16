@@ -90,6 +90,8 @@ include_once('cookiecheck.php');
     
     <?php
     
+    echo '<a class="button" href="/Web-Scripting-Assignment-Three/clear_order.php">Return to Recipes for You</a>';
+    
     $query = 'SELECT * FROM `order_contents` WHERE `UserID` = '.$_COOKIE['UserID']; 
         
     $order = $con->query($query);
